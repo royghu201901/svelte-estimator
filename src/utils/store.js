@@ -23,9 +23,18 @@ const add = (order, price) => {
 const edit = (id, order, price) => {
   store.update((items) => {
     const index = items.findIndex((i) => i.id === id)
+    if (index == -1) {
+      return items
+    }
     items[index].order = order
     items[index].price = price
     return items
+  })
+}
+
+const remove = (id) => {
+  store.update((items) => {
+    return items.filter((i) => i.id !== id)
   })
 }
 
@@ -37,5 +46,6 @@ store.subscribe((items) => {
 export default {
   subscribe: store.subscribe,
   add,
-  edit
+  edit,
+  remove
 }

@@ -23,6 +23,12 @@
   function edit(id, order, price) {
     dispatch('edit', {id, order, price})
   }
+
+  function remove(id) {
+    // 如果传参进来evenet那么event.stopPropagation()
+    // 或者在标签页直接像现在这样用svelte语法，直接在便签中添加stopPropagation
+    store.remove(id)
+  }
 </script>
 
 <style>
@@ -48,7 +54,10 @@
       <td>{order.order}</td>
       <td>{currencyFormat.format(order.price)}</td>
       <td>
-        <i class="far fa-trash-alt" />
+        <i
+          class="far fa-trash-alt"
+          on:click|stopPropagation={remove(order.id)}
+        />
       </td>
     </tr>
     {/each}
