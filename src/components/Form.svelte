@@ -54,7 +54,7 @@
       placeholder="Please enter your order item!"
     >
 
-    <label for="price">Price per unit</label>
+    <label for="price">Price Per Unit</label>
     <input
       bind:value={price}
       min="0"
