@@ -14,7 +14,8 @@ const add = (order, price) => {
     const item = {
       order,
       price,
-      id: new Date().getTime()
+      id: new Date().getTime(),
+      count: 1
     }
     return [item, ...items]
   })
@@ -38,6 +39,17 @@ const remove = (id) => {
   })
 }
 
+const changeCount = (id, count) => {
+  store.update((items) => {
+    const index = items.findIndex((i) => i.id === id)
+    if (index == -1) {
+      return items
+    }
+    items[index].count = count
+    return items
+  })
+}
+
 store.subscribe((items) => {
   const jsonString = JSON.stringify(items)
   localStorage.setItem(key, jsonString)
@@ -47,5 +59,6 @@ export default {
   subscribe: store.subscribe,
   add,
   edit,
-  remove
+  remove,
+  changeCount
 }

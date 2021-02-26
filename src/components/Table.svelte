@@ -16,12 +16,12 @@
   })
 
   $: total = orders.reduce((prev, next) => {
-    prev += Number(next.price)
+    prev += (Number(next.price) * next.count)
     return prev
   }, 0)
 
-  function edit(id, order, price) {
-    dispatch('edit', {id, order, price})
+  function edit(id, order, price, count) {
+    dispatch('edit', {id, order, price, count})
   }
 
   function remove(id) {
@@ -30,16 +30,16 @@
     store.remove(id)
   }
 
-  export let unit = 1
-
-  function minus() {
-    if (unit > 1) {
-      unit -= 1
+  function minus(id, count) {
+    if (count > 1) {
+      count -= 1
+      store.changeCount(id, count)
     }
   }
 
-  function add() {
-    unit += 1
+  function add(id, count) {
+    count += 1
+    store.changeCount(id, count)
   }
 </script>
 
@@ -57,7 +57,7 @@
     /* display: inline-block; */
     vertical-align: middle;
   }
-  .unit-input {
+  .count-input {
     width: 10rem;
     margin-bottom: 0;
     /* display: inline-block; */
@@ -73,34 +73,34 @@
     <tr>
       <th>Item</th>
       <th>Price</th>
-      <th>Unit</th>
+      <th>Count</th>
       <th />
     </tr>
   </thead>
   <tbody>
     {#each orders as order (order.id)}
-    <tr class="order" on:click={edit(order.id, order.order, order.price)}>
+    <tr class="order" on:click={edit(order.id, order.order, order.price, order.count)}>
       <td>{order.order}</td>
       <td>{currencyFormat.format(order.price)}</td>
       <td class="button-box">
         <div
           class="two columns"
-          on:click|stopPropagation={minus}
+          on:click|stopPropagation={minus(order.id, order.count)}
           type="button"
         >
           -
       </div>
         <input
-          bind:value={unit}
-          class="unit-input"
-          min="0"
+          bind:value={order.count}
+          class="count-input"
+          min="1"
           step="any"
           type="text"
-          name="unit"
+          name="count"
         >
         <div
           class="two columns"
-          on:click|stopPropagation={add}
+          on:click|stopPropagation={add(order.id, order.count)}
           type="button"
         >
           +

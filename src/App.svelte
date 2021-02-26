@@ -10,6 +10,7 @@
 	let id
   let order = ''
   let price
+	let count
 
 	function edit(event) {
 		({ id, order, price } = event.detail)
@@ -34,5 +35,5 @@
 
 	<Form bind:id bind:order bind:price />
 
-	<Table on:edit={edit} />
+	<Table bind:count on:edit={edit} />
 </main>
