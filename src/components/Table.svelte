@@ -31,6 +31,10 @@
   }
 
   function minus(id, count) {
+    count = Number(count)
+    if (count === 0) {
+      count = 1
+    }
     if (count > 1) {
       count -= 1
       store.changeCount(id, count)
@@ -38,6 +42,10 @@
   }
 
   function add(id, count) {
+    count = Number(count)
+    if (count === 0) {
+      count = 1
+    }
     count += 1
     store.changeCount(id, count)
   }
