@@ -531,7 +531,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (81:4) {#each orders as order (order.id)}
+    // (89:4) {#each orders as order (order.id)}
     function create_each_block(key_1, ctx) {
     	let tr;
     	let td0;
@@ -759,6 +759,12 @@ var app = (function () {
     	}
 
     	function minus(id, count) {
+    		count = Number(count);
+
+    		if (count === 0) {
+    			count = 1;
+    		}
+
     		if (count > 1) {
     			count -= 1;
     			store$1.changeCount(id, count);
@@ -766,6 +772,12 @@ var app = (function () {
     	}
 
     	function add(id, count) {
+    		count = Number(count);
+
+    		if (count === 0) {
+    			count = 1;
+    		}
+
     		count += 1;
     		store$1.changeCount(id, count);
     	}
