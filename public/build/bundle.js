@@ -626,7 +626,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (81:4) {#each orders as order (order.id)}
+    // (89:4) {#each orders as order (order.id)}
     function create_each_block(key_1, ctx) {
     	let tr;
     	let td0;
@@ -675,27 +675,27 @@ var app = (function () {
     			t8 = space();
     			td3 = element("td");
     			i = element("i");
-    			add_location(td0, file, 82, 6, 1559);
-    			add_location(td1, file, 83, 6, 1588);
+    			add_location(td0, file, 90, 6, 1701);
+    			add_location(td1, file, 91, 6, 1730);
     			attr_dev(div0, "class", "two columns svelte-1ynae2t");
     			attr_dev(div0, "type", "button");
-    			add_location(div0, file, 85, 8, 1672);
+    			add_location(div0, file, 93, 8, 1814);
     			attr_dev(input, "class", "count-input svelte-1ynae2t");
     			attr_dev(input, "min", "1");
     			attr_dev(input, "step", "any");
     			attr_dev(input, "type", "text");
     			attr_dev(input, "name", "count");
-    			add_location(input, file, 92, 8, 1840);
+    			add_location(input, file, 100, 8, 1982);
     			attr_dev(div1, "class", "two columns svelte-1ynae2t");
     			attr_dev(div1, "type", "button");
-    			add_location(div1, file, 100, 8, 2014);
+    			add_location(div1, file, 108, 8, 2156);
     			attr_dev(td2, "class", "button-box svelte-1ynae2t");
-    			add_location(td2, file, 84, 6, 1640);
+    			add_location(td2, file, 92, 6, 1782);
     			attr_dev(i, "class", "far fa-trash-alt");
-    			add_location(i, file, 109, 8, 2205);
-    			add_location(td3, file, 108, 6, 2192);
+    			add_location(i, file, 117, 8, 2347);
+    			add_location(td3, file, 116, 6, 2334);
     			attr_dev(tr, "class", "order svelte-1ynae2t");
-    			add_location(tr, file, 81, 4, 1469);
+    			add_location(tr, file, 89, 4, 1611);
     			this.first = tr;
     		},
     		m: function mount(target, anchor) {
@@ -785,7 +785,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(81:4) {#each orders as order (order.id)}",
+    		source: "(89:4) {#each orders as order (order.id)}",
     		ctx
     	});
 
@@ -854,19 +854,19 @@ var app = (function () {
     			t9 = space();
     			td1 = element("td");
     			t10 = text(t10_value);
-    			add_location(th0, file, 73, 6, 1326);
-    			add_location(th1, file, 74, 6, 1346);
-    			add_location(th2, file, 75, 6, 1367);
-    			add_location(th3, file, 76, 6, 1388);
-    			add_location(tr0, file, 72, 4, 1315);
-    			add_location(thead, file, 71, 2, 1303);
-    			add_location(td0, file, 117, 6, 2357);
+    			add_location(th0, file, 81, 6, 1468);
+    			add_location(th1, file, 82, 6, 1488);
+    			add_location(th2, file, 83, 6, 1509);
+    			add_location(th3, file, 84, 6, 1530);
+    			add_location(tr0, file, 80, 4, 1457);
+    			add_location(thead, file, 79, 2, 1445);
+    			add_location(td0, file, 125, 6, 2499);
     			attr_dev(td1, "colspan", "3");
-    			add_location(td1, file, 118, 6, 2378);
-    			add_location(tr1, file, 116, 4, 2346);
-    			add_location(tbody, file, 79, 2, 1418);
+    			add_location(td1, file, 126, 6, 2520);
+    			add_location(tr1, file, 124, 4, 2488);
+    			add_location(tbody, file, 87, 2, 1560);
     			attr_dev(table, "class", "primary svelte-1ynae2t");
-    			add_location(table, file, 70, 0, 1277);
+    			add_location(table, file, 78, 0, 1419);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -952,6 +952,12 @@ var app = (function () {
     	}
 
     	function minus(id, count) {
+    		count = Number(count);
+
+    		if (count === 0) {
+    			count = 1;
+    		}
+
     		if (count > 1) {
     			count -= 1;
     			store$1.changeCount(id, count);
@@ -959,6 +965,12 @@ var app = (function () {
     	}
 
     	function add(id, count) {
+    		count = Number(count);
+
+    		if (count === 0) {
+    			count = 1;
+    		}
+
     		count += 1;
     		store$1.changeCount(id, count);
     	}
