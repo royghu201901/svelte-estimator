@@ -857,7 +857,7 @@ var app = (function () {
     			input0 = element("input");
     			t2 = space();
     			label1 = element("label");
-    			label1.textContent = "Single Price";
+    			label1.textContent = "Price per unit";
     			t4 = space();
     			input1 = element("input");
     			t5 = space();
@@ -876,7 +876,7 @@ var app = (function () {
     			attr(input1, "type", "text");
     			attr(input1, "name", "price");
     			attr(input1, "id", "price");
-    			attr(input1, "placeholder", "Please enter your single price!");
+    			attr(input1, "placeholder", "Please enter your price!");
     			button.disabled = button_disabled_value = !/*canSubmit*/ ctx[4];
     			attr(button, "class", "float-right svelte-rsh4tk");
     			attr(button, "type", "submit");
