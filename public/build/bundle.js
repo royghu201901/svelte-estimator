@@ -531,7 +531,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (89:4) {#each orders as order (order.id)}
+    // (90:4) {#each orders as order (order.id)}
     function create_each_block(key_1, ctx) {
     	let tr;
     	let td0;
@@ -580,18 +580,18 @@ var app = (function () {
     			t8 = space();
     			td3 = element("td");
     			i = element("i");
-    			attr(div0, "class", "two columns svelte-1ynae2t");
+    			attr(div0, "class", "two columns svelte-4za3hj");
     			attr(div0, "type", "button");
-    			attr(input, "class", "count-input svelte-1ynae2t");
+    			attr(input, "class", "count-input svelte-4za3hj");
     			attr(input, "min", "1");
     			attr(input, "step", "any");
     			attr(input, "type", "text");
     			attr(input, "name", "count");
-    			attr(div1, "class", "two columns svelte-1ynae2t");
+    			attr(div1, "class", "two columns svelte-4za3hj");
     			attr(div1, "type", "button");
-    			attr(td2, "class", "button-box svelte-1ynae2t");
+    			attr(td2, "class", "button-box svelte-4za3hj");
     			attr(i, "class", "far fa-trash-alt");
-    			attr(tr, "class", "order svelte-1ynae2t");
+    			attr(tr, "class", "order svelte-4za3hj");
     			this.first = tr;
     		},
     		m(target, anchor) {
@@ -698,7 +698,7 @@ var app = (function () {
     			td1 = element("td");
     			t10 = text(t10_value);
     			attr(td1, "colspan", "3");
-    			attr(table, "class", "primary svelte-1ynae2t");
+    			attr(table, "class", "primary svelte-4za3hj");
     		},
     		m(target, anchor) {
     			insert(target, table, anchor);
