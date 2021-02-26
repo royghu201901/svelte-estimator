@@ -54,7 +54,7 @@
       placeholder="Please enter your order item!"
     >
 
-    <label for="price">Single Price</label>
+    <label for="price">Price per unit</label>
     <input
       bind:value={price}
       min="0"
@@ -62,7 +62,7 @@
       type="text"
       name="price"
       id="price"
-      placeholder="Please enter your single price!"
+      placeholder="Please enter your price!"
     >
   </fieldset>
   <button
